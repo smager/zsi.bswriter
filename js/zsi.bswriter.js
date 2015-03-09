@@ -3,7 +3,7 @@
  * @author German M. Fuentes <gm.fuentes@gmail.com>
  * @copyright 2015 ZettaSolutions, Inc. <zetta-solutions.net>
  * @license under MIT  <https://github.com/smager/zsiBSwriter/blob/master/LICENSE>
- * @createdate  Feb-22-2015 
+ * @createddate  Feb-22-2015 
  **/
  
 if(typeof zsi==='undefined') zsi={};
