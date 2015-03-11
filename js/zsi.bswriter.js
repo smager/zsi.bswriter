@@ -12,11 +12,11 @@ zsi.bsWriter = function(config){
 	//get new instance;
 	var bsw =this;	
 	
-	config.hasConfigFile = (typeof config.hasConfigFile === _ud) ?  config.hasConfigFile=true : config.hasConfigFile=false;	
-	if(config.hasConfigFile==false && typeof config.url===_ud ) throw new Error("hasConfigFile is set to false, url is required "); 		
+	if(typeof config.hasNoConfigFile === _ud) config.hasNoConfigFile=false;	
+	if(config.hasNoConfigFile==true && typeof config.url===_ud ) throw new Error("hasNoConfigFile is set to false, url is required "); 		
 	
 	//get default config url
-	config.url = (typeof config.url === _ud && config.hasConfigFile==true) ? config.url="templates/config.txt":config.url;
+	config.url = (typeof config.url === _ud && config.hasNoConfigFile==false) ? config.url="templates/config.txt":config.url;
 	
 	//private variables
 	this.__activeDiv="_activeDiv_";	
@@ -71,12 +71,13 @@ zsi.bsWriter = function(config){
 		var node = new bsw.node();
 		node.__loadComplete=callBackFunc;	
 		$.getJSON(config.url,function onLoadComplete(data){
-			if(config.hasConfigFile)				
-				bsw.__setTemplates(data,node);							
-			//if not using config file or using only single file for templates
-			else{
+			if(config.hasNoConfigFile){				
+				//if not using config file or using only single file or from the database for templates
 				bsw.__templates = data;
 				if(typeof node.__loadComplete!==_ud) node.__loadComplete();
+			}
+			else{
+				bsw.__setTemplates(data,node);							
 			}
 		});
 				
