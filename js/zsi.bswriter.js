@@ -5,12 +5,19 @@
  * @license under MIT  <https://github.com/smager/zsiBSwriter/blob/master/LICENSE>
  * @createddate  Feb-22-2015 
  **/
+ var _ud = 'undefined'; 
  
-if(typeof zsi==='undefined') zsi={};
+if(typeof zsi===_ud) zsi={};
 zsi.bsWriter = function(config){
+	//get new instance;
+	var bsw =this;	
+	
+	config.hasConfigFile = (typeof config.hasConfigFile === _ud) ?  config.hasConfigFile=true : config.hasConfigFile=false;	
+	if(config.hasConfigFile==false && typeof config.url===_ud ) throw new Error("hasConfigFile is set to false, url is required "); 		
+	
 	//get default config url
-	if(typeof config.url === 'undefined') config.url="templates/config.txt";
-	var bsw =this;	//get new instance;
+	config.url = (typeof config.url === _ud && config.hasConfigFile==true) ? config.url="templates/config.txt":config.url;
+	
 	//private variables
 	this.__activeDiv="_activeDiv_";	
 	//private functions
@@ -20,14 +27,14 @@ zsi.bsWriter = function(config){
 	this.__getTemplate=function(p_tmp,info){
 		var ts = bsw.__templates;
 		for(var i=0;i<ts.length;i++){
-			if(ts[i].name== p_tmp){
+			if(ts[i].name.toLowerCase()== p_tmp.toLowerCase()){
 				if(!info.id) if(info.name) info.id=info.name; 
 				if(!info.name) if(info.id) info.name=info.id;  
 				
 				if(info.labelsize) info.labelsize = "col-" + config.SizeType + "-" + info.labelsize
 				if(info.inputsize) info.inputsize = "col-" + config.SizeType + "-" + info.inputsize
 
-				return bsw.__compile(ts[i].html,info);						
+				return bsw.__compile(unescape(ts[i].html),info);						
 			}		
 		}
 	}		
@@ -51,7 +58,7 @@ zsi.bsWriter = function(config){
 			}
 			function loadCompleted(){
 				if(templates.length ==loadedItems) {
-					if(typeof node.__loadComplete!=='undefined') {
+					if(typeof node.__loadComplete!==_ud) {
 						node.__loadComplete();
 					}
 				}
@@ -61,15 +68,22 @@ zsi.bsWriter = function(config){
 	
 	//public functions 	
 	this.write= function(callBackFunc){
-		$.get(config.url,function (data){				
-			var node = new bsw.node();
-			node.__loadComplete=callBackFunc;	
-			bsw.__setTemplates($.parseJSON(data),node);
-		});	
+		var node = new bsw.node();
+		node.__loadComplete=callBackFunc;	
+		$.getJSON(config.url,function onLoadComplete(data){
+			if(config.hasConfigFile)				
+				bsw.__setTemplates(data,node);							
+			//if not using config file or using only single file for templates
+			else{
+				bsw.__templates = data;
+				if(typeof node.__loadComplete!==_ud) node.__loadComplete();
+			}
+		});
+				
 	}
 	
 	this.node = function(){
-		this.lastObj = $("." + config.targetClass).addClass(bsw.__activeDiv);				
+		this.lastObj = $("." + config.targetClass).addClass(bsw.__activeDiv);			
 	}	
 
 	// node prototypes
