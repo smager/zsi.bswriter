@@ -5,7 +5,12 @@
  * @license under MIT  <https://github.com/smager/zsiBSwriter/blob/master/LICENSE>
  * @createddate  Feb-22-2015 
  **/
- var _ud = 'undefined'; 
+ /*
+	dictionary:
+ */
+
+
+ var _ud = 'undefined';  
  
 if(typeof zsi===_ud) zsi={};
 zsi.bsWriter = function(config){
@@ -42,20 +47,36 @@ zsi.bsWriter = function(config){
 		var template = Handlebars.compile(tmp);
 		return template( data);				
 	}
-	this.__setTemplates=function(templates,node){
+
+	//create prototype functions for node.
+	this.__setFunction=function(fnName){			
+		bsw.node.prototype[fnName] = function(jsonData){
+			var h =  bsw.__getTemplate(fnName,jsonData);		
+			$("." + bsw.__activeDiv).append(h);
+			return this;												
+		};
+		
+	}
+	
+	this.__loadTemplates=function(templates,node){		
 		var loadedItems=0;
+		
 			for(var i=0;i<templates.length;i++){
 				loadTemplate( templates[i].name, templates[i].url);
-			}	
+			}
+			
 			function loadTemplate(templateName,url){
+				var _tmpl=templateName;
 				$.get(url 
 					,function (info){
-						bsw.__templates.push({name:templateName,html:info});
+						bsw.__templates.push({name:templateName,html:info});	
+						bsw.__setFunction(templateName);
 						loadedItems++;
 						loadCompleted();
 					}
 				);	
 			}
+			
 			function loadCompleted(){
 				if(templates.length ==loadedItems) {
 					if(typeof node.__loadComplete!==_ud) {
@@ -72,12 +93,18 @@ zsi.bsWriter = function(config){
 		node.__loadComplete=callBackFunc;	
 		$.getJSON(config.url,function onLoadComplete(data){
 			if(config.hasNoConfigFile){				
-				//if not using config file or using only single file or from the database for templates
+				//if not using config file 
+				//or using only single file 
+				//or single data from the database for templates
 				bsw.__templates = data;
+				for(var i=0;i<data.length;i++){				
+					bsw.__setFunction(data[i].name)
+				}
+				
 				if(typeof node.__loadComplete!==_ud) node.__loadComplete();
 			}
 			else{
-				bsw.__setTemplates(data,node);							
+				bsw.__loadTemplates(data,node);							
 			}
 		});
 				
@@ -87,13 +114,7 @@ zsi.bsWriter = function(config){
 		this.lastObj = $("." + config.targetClass).addClass(bsw.__activeDiv);			
 	}	
 
-	// node prototypes
-	this.node.prototype.input = function(jsonData){	
-		var h =  bsw.__getTemplate("bsinput",jsonData);		
-		$("." + bsw.__activeDiv).append(h);
-		return this;
-	}
-		
+	// node prototypes			
 	this.node.prototype.div = function(jsonData){
 		var _id="";
 		var _guid = this.guid();
