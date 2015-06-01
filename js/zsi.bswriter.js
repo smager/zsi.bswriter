@@ -51,6 +51,10 @@ zsi.bsWriter = function(config){
 	//create prototype functions for node.
 	this.__setFunction=function(fnName){			
 		bsw.node.prototype[fnName] = function(jsonData){
+           if( fnName.toLowerCase().indexOf("input") > -1) {
+              if(!jsonData.type) jsonData.type="text";  
+           }
+            console.log(jsonData);
 			var h =  bsw.__getTemplate(fnName,jsonData);		
 			$("." + bsw.__activeDiv).append(h);
 			return this;												
