@@ -1,3 +1,11 @@
+express vpn code:
+EWRCHV6HQMJ5JR83BGKOKOP
+
+
+april 24: wednesday
+#917257935 
+
+https://flixtor.to
 hosting:
 03/21/2017    675.08  - LFC hosting (pafies)
 04/11/2017    668.62  - LFC hosting (pafies)
@@ -7,15 +15,52 @@ hosting:
 08/07/2017    732.66  - LFC hosting (pafies)
 09/02/2017    742.89  - LFC hosting (pafies)
 -----paid---4,921,000 - feb 20, 2018 -- change 78.29
--------------------------------------------------
-10/06/2017    688.77  - LFC hosting (pafies)
-10/19/2017  1,617.23  - godaddy.com (domain zsitools.com) 
-11/05/2017    692.60  - LFC hosting (pafies)
-12/05/2017    684.11  - LFC hosting (pafies)
-01/05/2018    673.66  - LFC hosting (pafies)
-----------------------------------------------
+----------------------------------------------------
+10/06/2017	688.77	LFC hosting  
+10/19/2017    1,617.23	godaddy.com (domain zsitools.com) 
+11/05/2017	692.60	LFC hosting  
+12/05/2017	684.11	LFC hosting  
+01/05/2018	673.66	LFC hosting   
+02/05/2018	695.55	LFC Hosting  
+03/05/2018	701.68	LFC Hosting 
+04/05/2018	699.50	LFC Hosting  
+05/05/2018	719.39	LFC Hosting  
+06/05/2018	706.08	LFC Hosting  
+07/05/2018	716.73	LFC Hosting  
+08/05/2018	327.92	LFC Hosting  
+09/05/2018	719.39	LFC Hosting  
+10/05/2018	731.04	LFC Hosting  
+11/05/2018	713.55	LFC Hosting  
+12/05/2018	709.28	LFC Hosting  
+02/03/2019	703.12	LFC Hosting  
+             12,499.60 
+------------------------------ ----------------
             9,278.08 
-                
+
+
+10/02/2017	131.75
+11/02/2017	131.75
+12/02/2017	131.75
+01/02/2018	131.75
+2/24/2018	131.75
+3/2/2018	161.98
+4/2/2018	132.97
+5/2/2018	132.21
+6/2/2018	133.63
+7/2/2018	135.87
+8/2/2018	135.32
+9/2/2018	138.92
+10/2/2018	165.47
+11/2/2018	161.6
+12/1/2018	160.19
+1/1/2019	160.42
+	       2,277.33
+--------------------------------------------
+
+PLDT modem:                
+ admin/PLDTWIFIuE1Rs
+ fuentesWiFi/gesmager
+
 globe router: user / @l03e1t3
 
 
@@ -26,6 +71,7 @@ globe modem:
 user:admin
 pwd:3UJUh2VemEfUtesEchEC2d2e
 
+german.fuentes@enterproj.com / gesmager
 gopro : gm.fuentes@gmail.com / gesmager$4
 serial : C3161325174982
 
@@ -59,9 +105,34 @@ coins.ph:gm_fuenteS@yahoo.com / gesmager
 theadsleader.com : smager/gesmager$4
 coinpayments.net : gm_fuentes@yahoo.com / gesmager
 soundcloud: gm.fuentes@gmail.com /gesmager
-slack : gm_fuentes@yahoo.com/gesmager
+
+work mines:
+
+https://workmines.com/register.aspx?u=318920
+http://bit.ly/2HFO5EG
+smager/Gesmager$4
+
+Payeer:
+Login: P1013303881
+gm_fuentes@yahoo.com/Gesmager$4
+
+https://portal.insularlife.com.ph/CustomerPortalV2/
+ gm_fuentes@yahoo.com / Gesmager$4
+ to pay bank add IL
+  policy numbers: 
+   W100266566 = smager
+   W1E0014379 = mjane
+
+slack : 
+	transforwardtech.slack.com : gm.fuentes@gmail.com/gesmager
+	zetta-solutions.slack.com: gm_fuentes@yahoo.com/gesmager
+
+
+d.atlassian.com:
+gm.fuentes@gmail.com / gesmager
 bitbucket.org : gm_fuentes@yahoo.com/gesmager
-leonisamfuentes@gmail.com/gesmager
+
+
 
 Sonar x1 LE: 
 serial : CXSL100791841566803
@@ -81,6 +152,10 @@ bdO:gfuentes/gesmager_4
 
 bpi:neufsmager/gesmager
 9119 144 385
+-----------------------
+cti:neufsmager2/gesmager$4
+pin:130701
+
 
 www.gmfuentes.com :gm.fuentes/Gesmager@4jane
 http://oracleexpertscebu.com/  smager/Gesmager@4jane
