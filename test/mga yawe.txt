@@ -105,8 +105,14 @@ coins.ph:gm_fuenteS@yahoo.com / gesmager
 theadsleader.com : smager/gesmager$4
 coinpayments.net : gm_fuentes@yahoo.com / gesmager
 soundcloud: gm.fuentes@gmail.com /gesmager
+
 https://portal.insularlife.com.ph/CustomerPortalV2/
-gm_fuentes@yahoo.com / Gesmager$4
+ gm_fuentes@yahoo.com / Gesmager$4
+ to pay bank add IL
+  policy numbers: 
+   W100266566 = smager
+   W1E0014379 = mjane
+
 slack : 
 	transforwardtech.slack.com : gm.fuentes@gmail.com/gesmager
 	zetta-solutions.slack.com: gm_fuentes@yahoo.com/gesmager
